@@ -75,7 +75,7 @@ def main():
     author = bot_info.get(engine.BOT_AUTHOR, "Unknown Author")
 
     # Print summary
-    avg_turns = total_turns // num_trials
+    avg_turns = total_turns / num_trials
     print("\n==== MASTERMIND RESULTS ====")
     print(f"Bot: {name} by {author}")
     print(f"Total Trials: {num_trials}")
