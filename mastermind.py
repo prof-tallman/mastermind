@@ -44,7 +44,7 @@ def main():
     bot_module, num_trials = parse_args()
 
     settings = {
-        'game_seed': engine.DEFAULT_SEED,
+        'game_seed': 12345677,
         'bot_seed': None,
         'max_turns': 1500,
         'code_length': 4,
@@ -67,7 +67,7 @@ def main():
             total_turns += result["turns"]
         else:
             total_turns += settings["max_turns"]
-            print(f"Error: Bot forfeited game due to '{result["reason"]}'")
+            print(f"Error: Bot forfeited game due to '{result['reason']}'")
 
     # Get bot info for display
     bot_info = result.get("botinfo", {})
