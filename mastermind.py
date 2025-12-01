@@ -63,7 +63,11 @@ def main():
     # Run all of the games
     for _ in range(num_trials):
         result = mastermind.run_game_loop(bot_module)
-        total_turns += result["turns"]
+        if result["result"] == "win":
+            total_turns += result["turns"]
+        else:
+            total_turns += settings["max_turns"]
+            print(f"Error: Bot forfeited game due to '{result["reason"]}'")
 
     # Get bot info for display
     bot_info = result.get("botinfo", {})
